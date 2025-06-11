@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Auth Section -->
+  <div class="auth-container" id="auth-section">
+    <h2>Register</h2>
+    <input id="reg-username" placeholder="Username" />
+    <input id="reg-email" placeholder="Email" />
+    <input id="reg-password" placeholder="Password" type="password" />
+    <button onclick="register()">Register</button>
+
+    <h2>Login</h2>
+    <input id="login-email" placeholder="Email" />
+    <input id="login-password" placeholder="Password" type="password" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Chat Section -->
+  <div class="chat-container" id="chat-section" style="display: none;">
+    <h2>Real-Time Chat</h2>
+
+    <!-- Channel Selector -->
+    <label for="channel-select">Select Channel:</label>
+    <select id="channel-select">
+      <option value="general">#general</option>
+      <option value="random">#random</option>
+      <option value="tech">#tech</option>
+    </select>
+
+    <!-- Chat Messages -->
+    <div id="chat-box"></div>
+
+    <!-- Input Field and Send Button -->
+    <div class="input-wrapper">
+      <input type="text" id="message-input" placeholder="Type your message..." />
+      <button id="send-btn">Send</button>
+    </div>
+
+    <!-- Emoji Hint -->
+    <small>Use emojis like <code>:smile:</code>, <code>:heart:</code>, <code>:fire:</code></small>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
